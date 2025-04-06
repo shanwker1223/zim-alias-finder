@@ -19,5 +19,4 @@ jobs:
       id: release
       with:
         release-type: simple
-        signoff: Gabriel Souza <gabriellucasdev@gmail.come>
         token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
