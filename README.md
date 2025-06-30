@@ -23,6 +23,12 @@ Then run the install command:
 zimfw install
 ```
 
+Finally, add this line to `.zshrc`:
+
+```sh
+zstyle ':zim:plugins:alias-finder' autoload yes
+```
+
 ## Usage
 
 Once installed, the module hooks into your shell's pre-execution process. It listens to every command and, if a corresponding alias is found or a best-match alias is determined, it prints a suggestion before executing the command.
@@ -56,25 +62,25 @@ The module behavior is fully customizable using Zsh styles. You can set these op
 - **Include Exact Matches:**  
   Only suggest aliases that exactly match your command. *(Enabled by default)*  
   ```sh
-  zstyle -t ':zim:plugins:alias-finder' include-exact yes
+  zstyle ':zim:plugins:alias-finder' include-exact yes
   ```
 
 - **Include Longer Matches:**  
   Also include suggestions where the alias command is longer than your typed command. *(Disabled by default)*
   ```sh
-  zstyle -t ':zim:plugins:alias-finder' include-longer yes
+  zstyle ':zim:plugins:alias-finder' include-longer yes
   ```
 
 - **Include Shorter Matches:**  
   Include suggestions where the alias command is shorter than your command. *(Enabled by default)*  
   ```sh
-  zstyle -t ':zim:plugins:alias-finder' include-shorter yes
+  zstyle ':zim:plugins:alias-finder' include-shorter yes
   ```
 
 - **Use Best Match:**  
   Enable best-match suggestions based on common prefix scoring. *(Enabled by default)*  
   ```sh
-  zstyle -t ':zim:plugins:alias-finder' use-best-match yes
+  zstyle':zim:plugins:alias-finder' use-best-match yes
   ```
 
 ## How It Works
